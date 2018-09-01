@@ -21,13 +21,13 @@ Once you execute above commands, check the number of pods using
 kubectl get pods
 
 You should be able to see four pods 
-================================================================
+---------------------------------------------------------------
 NAME              READY     STATUS    RESTARTS   AGE
 flask-app-c6ww6   1/1       Running   0          6m
 flask-app-hq4wr   1/1       Running   0          6m
 flask-app-jpbh6   1/1       Running   0          6m
 flask-app-n5smr   1/1       Running   0          4m
-================================================================
+---------------------------------------------------------------
 names might change. 
 See the service created using 
 
