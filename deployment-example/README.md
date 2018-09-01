@@ -41,3 +41,9 @@ kubectl rollout resume deployment flask-deployment
 To undo the deployment
 
 kubectl rollout undo deployment flask-deployment
+
+---------------------------------------------------------
+
+identify minikube ip by executing "minikube ip" command
+
+use the ip generated in above step to access the app http://$(minikube ip):31888
