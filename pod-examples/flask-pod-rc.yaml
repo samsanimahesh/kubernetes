@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: flask-app
+spec:
+  replicas: 4
+  selector:
+    app: flask-app
+    role: load-balancer
+  template:
+    metadata:
+      labels:
+        app: flask-app
+        role: load-balancer
+    spec:
+      containers:
+        - name: flask-app
+          image: samsanimahesh/flask-host-image
+          ports:
+            - containerPort: 5000

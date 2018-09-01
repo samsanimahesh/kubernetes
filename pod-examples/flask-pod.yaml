@@ -1,0 +1,32 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: flask-one
+  labels:
+    name: flask-one
+    app: flask-app
+spec:
+      containers:
+      - image: samsanimahesh/flask-image-one:v1
+        name: flask-one
+        ports:
+        - name: flask
+          containerPort: 5000
+          hostPort: 5000
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: flask-one
+  labels:
+    name: flask-one
+    app: flask-app
+spec:
+  selector:
+    name: flask-one
+  type: NodePort
+  ports:
+    - name: flask-one
+      port: 5000
+      targetPort: 5000
