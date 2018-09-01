@@ -20,25 +20,26 @@ Once you execute above commands, check the number of pods using
 
 kubectl get pods
 
-You should be able to see four pods 
----------------------------------------------------------------
-NAME              READY     STATUS    RESTARTS   AGE
-flask-app-c6ww6   1/1       Running   0          6m
-flask-app-hq4wr   1/1       Running   0          6m
-flask-app-jpbh6   1/1       Running   0          6m
-flask-app-n5smr   1/1       Running   0          4m
+You should be able to see four pods <br>
+--------------------------------------------------------------- <br>
+NAME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;              READY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     STATUS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    RESTARTS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    AGE <br>
+flask-app-c6ww6&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    1/1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;       Running&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    0 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;          6m <br>
+flask-app-hq4wr&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    1/1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;       Running&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;           6m <br>
+flask-app-jpbh6&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    1/1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;        Running&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;           6m <br>
+flask-app-n5smr&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    1/1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;        Running&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;           4m <br>
 ---------------------------------------------------------------
 names might change. 
-See the service created using 
+
+You can see the service created using 
 
 kubectl get svc (or) kubectl get services
 
-You should be able to see below output
-===============================================================================
-NAME         TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)          AGE
-flask-one    NodePort    10.107.206.82   <none>        5000:31888/TCP   7m
-kubernetes   ClusterIP   10.96.0.1       <none>        443/TCP          20d
-===============================================================================
+You should be able to see below output <br>
+=============================================================================== <br>
+NAME         TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)          AGE . <br>
+flask-one    NodePort    10.107.206.82   <none>        5000:31888/TCP   7m <br>
+kubernetes   ClusterIP   10.96.0.1       <none>        443/TCP          20d<br>
+===============================================================================<br>
 
 The port 31888 in the first line might change in your case.
 
