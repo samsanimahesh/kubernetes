@@ -21,7 +21,7 @@ Once you execute above commands, check the number of pods using
 > kubectl get pods
 
 You should be able to see four pods <br>
-```sh
+```js
 --------------------------------------------------------------- 
 NAME             READY     STATUS    RESTARTS    AGE 
 flask-app-c6ww6  1/1       Running    0           6m 
@@ -37,7 +37,7 @@ You can see the service created using
 > kubectl get svc (or) kubectl get services
 
 You should be able to see below output <br>
-```sh
+```js
 =============================================================================== 
 NAME         TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)          AGE . 
 flask-one    NodePort    10.107.206.82   <none>        5000:31888/TCP   7m 
