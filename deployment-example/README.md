@@ -13,7 +13,7 @@ Deployments will create a specialized ReplicationController called ReplicationSe
 > kubectl get rs
 
 you will be able to see the following output
-```sh
+```js
 NAME                          DESIRED   CURRENT   READY     AGE
 flask-deployment-85f85c8d96   1         1         1         12s
 ```
