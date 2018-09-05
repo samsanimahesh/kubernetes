@@ -8,50 +8,54 @@ https://kubernetes.io/docs/tasks/tools/install-kubectl/
 
 once installed run below commands
 
-minikube start
+> minikube start
 
-kubectl create -f flask-pod-rc.yaml
+> kubectl create -f flask-pod-rc.yaml
 
-kubectl create -f flask-pod-rc-svc.yaml
+> kubectl create -f flask-pod-rc-svc.yaml
 
 The second one is for creating the service, if you don't create the service you cannot access the application from outside world.
 
 Once you execute above commands, check the number of pods using 
 
-kubectl get pods
+> kubectl get pods
 
 You should be able to see four pods <br>
---------------------------------------------------------------- <br>
-NAME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;              READY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     STATUS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    RESTARTS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    AGE <br>
-flask-app-c6ww6&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    1/1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;       Running&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    0 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;          6m <br>
-flask-app-hq4wr&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    1/1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;       Running&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;           6m <br>
-flask-app-jpbh6&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    1/1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;        Running&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;           6m <br>
-flask-app-n5smr&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    1/1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;        Running&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;           4m <br>
+```sh
+--------------------------------------------------------------- 
+NAME             READY     STATUS    RESTARTS    AGE 
+flask-app-c6ww6  1/1       Running    0           6m 
+flask-app-hq4wr  1/1       Running    0           6m 
+flask-app-jpbh6  1/1       Running    0           6m 
+flask-app-n5smr  1/1       Running    0           4m 
 ---------------------------------------------------------------
-names might change. 
+```
+names might change in your case. 
 
 You can see the service created using 
 
-kubectl get svc (or) kubectl get services
+> kubectl get svc (or) kubectl get services
 
 You should be able to see below output <br>
-=============================================================================== <br>
-NAME         TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)          AGE . <br>
-flask-one    NodePort    10.107.206.82   <none>        5000:31888/TCP   7m <br>
-kubernetes   ClusterIP   10.96.0.1       <none>        443/TCP          20d<br>
-===============================================================================<br>
+```sh
+=============================================================================== 
+NAME         TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)          AGE . 
+flask-one    NodePort    10.107.206.82   <none>        5000:31888/TCP   7m 
+kubernetes   ClusterIP   10.96.0.1       <none>        443/TCP          20d
+===============================================================================
+```
 
 The port 31888 in the first line might change in your case.
 
 identify minikube ip by executing "minikube ip" command
 
 use the ip generated in above step to access the app
-http://$(minikube ip):31888
+> http://$(minikube ip):31888
 
 Refresh the application to see the request being forwarded to different pods
 
 Now delete a pod using
-kubectl delete pod <pod-name>
+> kubectl delete pod <pod-name>
 
 and when you execute "kubectl get pods" you can see a new pod getting created.
 
